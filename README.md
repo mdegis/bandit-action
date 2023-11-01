@@ -1,5 +1,5 @@
 # Bandit Action
-From Bandit documantation:
+From Bandit documentation:
 
 Bandit is a tool designed to find common security issues in Python code. To do this Bandit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. Once Bandit has finished scanning all the files it generates a report.
 
@@ -18,21 +18,21 @@ This Github Action will let you use Bandit with the highly configurable paramete
 
 ### `level`
 
-**Optional** Report only issues of a given severity level or higher. 
+**Optional** Report only issues of a given severity level or higher.
 Can be LOW, MEDIUM or HIGH. Default is UNDEFINED (everything).
 
 **Default** `"UNDEFINED"`
 
 ### `confidence`
 
-**Optional** Report only issues of a given confidence level or higher. 
+**Optional** Report only issues of a given confidence level or higher.
 Can be LOW, MEDIUM or HIGH. Default is UNDEFINED (everything).
 
 **Default** `"UNDEFINED"`
 
 ### `excluded_paths`
 
-**Optional** Comma-separated list of paths (glob patterns supported) to exclude from scan 
+**Optional** Comma-separated list of paths (glob patterns supported) to exclude from scan
 (note that these are in addition to the excluded paths provided in the config file) (default is from the Bandit itself)
 
 **Default** `".svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.eggs,*.egg"`
@@ -64,7 +64,7 @@ You can see the comment at the PR if there is an at least one issue.
 ## Example usage
 ```yml
 uses: mdegis/bandit-action@v1
-with: 
+with:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   path: "."
   level: high
