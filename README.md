@@ -63,7 +63,7 @@ You can see the comment at the PR if there is an at least one issue.
 
 ## Example usage
 ```yml
-uses: mdegis/bandit-action@v1
+uses: mdegis/bandit-action@v1.0
 with:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   path: "."
