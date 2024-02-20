@@ -12,7 +12,7 @@ This Github Action will let you use Bandit with the highly configurable paramete
 
 ### `path`
 
-**Optional** The path to run bandit on
+**Optional** The path (or list of paths) to run bandit on
 
 **Default** `"."`
 
