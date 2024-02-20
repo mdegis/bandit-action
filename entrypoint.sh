@@ -58,11 +58,6 @@ else
     INI_PATH="--ini $7"
 fi
 
-# select directories of changed files
-for file in $1; do
-    directories_changed+=($(dirname $file))
-done
-
 # select unique directories
 unique_directories_changed=($(for dir in "${directories_changed[@]}"; do echo "${dir}"; done | sort -u))
 
