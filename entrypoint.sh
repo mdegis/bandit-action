@@ -58,4 +58,10 @@ else
     INI_PATH="--ini $7"
 fi
 
-bandit -f github -r $1 $LEVEL $CONFIDENCE $EXCLUDED_PATHS $EXIT_ZERO $SKIPS $INI_PATH
+# select unique directories
+unique_directories_changed=($(for dir in "${directories_changed[@]}"; do echo "${dir}"; done | sort -u))
+
+# run bandit on each unique directory
+for dir in "${unique_directories_changed[@]}"; do
+    bandit -r $dir $LEVEL $CONFIDENCE $EXCLUDED_PATHS $EXIT_ZERO $SKIPS $INI_PATH
+done
