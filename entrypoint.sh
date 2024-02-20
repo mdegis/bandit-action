@@ -58,10 +58,10 @@ else
     INI_PATH="--ini $7"
 fi
 
-# select unique directories
-unique_directories_changed=($(for dir in "${directories_changed[@]}"; do echo "${dir}"; done | sort -u))
+# select unique files/directories
+unique_directories=($(for dir in "${1[@]}"; do echo "${dir}"; done | sort -u))
 
-# run bandit on each unique directory
-for dir in "${unique_directories_changed[@]}"; do
+# run bandit on each unique files/directories
+for dir in "${unique_directories[@]}"; do
     bandit -r $dir $LEVEL $CONFIDENCE $EXCLUDED_PATHS $EXIT_ZERO $SKIPS $INI_PATH
 done
