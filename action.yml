@@ -2,7 +2,7 @@ name: 'Bandit Action'
 description: 'Bandit Action'
 inputs:
   path:
-    description: 'File or directory to run bandit on'
+    description: 'Files or directories to run bandit on'
     required: false
     default: '.'
   level:
